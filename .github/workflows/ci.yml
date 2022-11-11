@@ -65,7 +65,7 @@ jobs:
       - name: Checkout csdp-salesdemo_applications
         uses: actions/checkout@v3
         with:
-          repository: idan-codefresh/canary-rollout # change to real repo
+          repository: testcodefresh/canary-rollout # change to real repo
           path: .
           
       - name: Update application version
