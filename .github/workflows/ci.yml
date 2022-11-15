@@ -33,7 +33,8 @@ jobs:
       - name: report image
         with:
           # Runtime to use for the enrichment.
-          CF_RUNTIME_NAME: 'codefresh-hosted'
+          #CF_RUNTIME_NAME: 'codefresh-hosted'
+          CF_RUNTIME_NAME: 'cf-il-aws'
 
           # API key for authentication to Codefresh. !! Committing a plain text token is a security risk. We highly recommend using encrypted secrets. !!
           # Documentation - https://docs.github.com/en/actions/security-guides/encrypted-secrets
@@ -43,7 +44,8 @@ jobs:
           CF_IMAGE: ${{env.CF_IMAGE}}
 
           # Container registry integration where the image is stored.
-          CF_CONTAINER_REGISTRY_INTEGRATION: 'dockerhub-test'
+          #CF_CONTAINER_REGISTRY_INTEGRATION: 'dockerhub-test'
+          CF_CONTAINER_REGISTRY_INTEGRATION: 'dcr'
 
           # Git branch with the commit  Pull Request data to add to the image. Pass the branch from the event payload used to trigger your action.
           CF_GIT_BRANCH: ${{ github.event.pull_request.head.ref }}
@@ -53,7 +55,8 @@ jobs:
           CF_GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
           # Issue tracking integration to use to enrich the image.
-          CF_JIRA_INTEGRATION: 'jira-test'
+          #CF_JIRA_INTEGRATION: 'jira-test'
+          CF_JIRA_INTEGRATION: 'jra'
 
           # Jira project prefix  identifying the ticket number to use.
           CF_JIRA_PROJECT_PREFIX: 'CR'
