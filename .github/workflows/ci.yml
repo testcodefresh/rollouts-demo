@@ -4,8 +4,13 @@ on:
   pull_request:
     branches:
       - master
+      - e2e-release-flow
     types:
       - closed
+  push:
+    branches:
+      - master
+      - e2e-release-flow 
 jobs:
   build:
     environment:
