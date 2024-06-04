@@ -17,7 +17,7 @@ spec:
         - name: canary-demo
           #image: boblinger/rollouts-demo:purple
           image: boblinger/rollouts-demo:blue
-          # image: boblinger/rollouts-demo:purple
+          # image: boblinger/rollouts-demo:green
           imagePullPolicy: Always
           ports:
             - name: http
