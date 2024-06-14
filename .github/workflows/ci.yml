@@ -4,8 +4,13 @@ on:
   pull_request:
     branches:
       - master
+      - e2e-release-flow
     types:
       - closed
+  push:
+    branches:
+      - master
+      - e2e-release-flow 
 jobs:
   build:
     environment:
@@ -32,6 +37,8 @@ jobs:
     
       - name: report image
         with:
+          CF_VERBOSE: true
+          
           # Runtime to use for the enrichment.
           CF_RUNTIME_NAME: 'test-date'
           CF_PLATFORM_URL: 'https://pre-prod.codefresh.io'
